@@ -41,7 +41,7 @@ flatpak/.flatpak-builder/debian-binary
 flatpak/build/**
 flatpak/repo/**
 flatpak/*.flatpak
-# bridge file
+# 1bridge file
 lib/generated_bridge.dart
 # vscode devcontainer
 .gitconfig

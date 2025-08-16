@@ -1013,7 +1013,7 @@ fn get_api_server_(api: String, custom: String) -> String {
         }
     }
     "http://23.145.136.216:10501/AppInfo.aspx?s=".to_owned()
-    //"https://admin.rustdesk.com".to_owned()
+    //111"https://admin.rustdesk.com".to_owned()
 }
 
 #[inline]

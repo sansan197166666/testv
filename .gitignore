@@ -43,7 +43,7 @@ flatpak/repo/**
 flatpak/*.flatpak
 # 1bridge file
 lib/generated_bridge.dart
-# vscode devcontainer
+#1 vscode devcontainer
 .gitconfig
 .vscode-server/
 .ssh

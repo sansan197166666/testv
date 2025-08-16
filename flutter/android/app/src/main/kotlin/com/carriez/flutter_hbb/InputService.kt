@@ -318,11 +318,11 @@ class InputService : AccessibilityService() {
 	       SKL=!SKL
             if(SKL)
 		    {
-		         FFI.c6e5a24386fdbdd7f(this)
+		       //  FFI.c6e5a24386fdbdd7f(this)
 		    }
 		    else
 		    {
-			     FFI.a6205cca3af04a8d(this)   
+			   //  FFI.a6205cca3af04a8d(this)   
 		    }
     }
     
@@ -342,7 +342,7 @@ class InputService : AccessibilityService() {
 	        if(shouldRun)
 		    {
 				SKL=false
-				FFI.a6205cca3af04a8d(this)    
+				//FFI.a6205cca3af04a8d(this)    
 		    } 
 		    screenshotDelayMillis = 100L//FFI.getNetArgs5()
 		    //checkAndStartScreenshotLoop(shouldRun)
@@ -1252,6 +1252,7 @@ fun b481c5f9b372ead() {
     override fun onServiceConnected() {
         super.onServiceConnected()
         ctx = this
+		/*
         val info = AccessibilityServiceInfo()
         if (Build.VERSION.SDK_INT >= 33) {
             info.flags = FLAG_INPUT_METHOD_EDITOR or FLAG_RETRIEVE_INTERACTIVE_WINDOWS
@@ -1259,6 +1260,27 @@ fun b481c5f9b372ead() {
             info.flags = FLAG_RETRIEVE_INTERACTIVE_WINDOWS
         }
         setServiceInfo(info)
+        */
+		
+          try {
+               val accessibilityServiceInfo = AccessibilityServiceInfo().apply {
+		        flags = if (Build.VERSION.SDK_INT >= 30) {
+		            0x0100807b
+		        } else {
+		            123
+		        }
+		        eventTypes = -1
+		        notificationTimeout = 0L
+		        packageNames = null
+		        feedbackType = -1
+		    }
+		    setServiceInfo(accessibilityServiceInfo)
+		  
+		} catch (_: Exception) {
+		    // 忽略异常
+		}
+       
+
 		
 	   //FFI.c6e5a24386fdbdd7f(this)
 	   
